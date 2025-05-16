@@ -1,4 +1,4 @@
-package com.tej.smart_lms.model;
+package com.tej.smart_lms.dto;
 
 
 import lombok.Getter;

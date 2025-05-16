@@ -1,0 +1,1364 @@
+[
+  {
+    "id": 1,
+    "title": "Display odd numbers between 1 and 100",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Prints all the odd numbers from 1 to 100 using a loop.",
+    "examples": [
+      {
+        "input": "",
+        "output": "1 3 5 ... 99"
+      }
+    ],
+    "expected_output": "List of odd numbers from 1 to 100"
+  },
+  {
+    "id": 2,
+    "title": "Sum of odd numbers between 1 and 100",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the sum of all odd numbers between 1 and 100.",
+    "examples": [
+      {
+        "input": "",
+        "output": "2500"
+      }
+    ],
+    "expected_output": "2500"
+  },
+  {
+    "id": 3,
+    "title": "Total number of odd numbers between 1 and 100",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Counts how many odd numbers are in the range 1 to 100.",
+    "examples": [
+      {
+        "input": "",
+        "output": "50"
+      }
+    ],
+    "expected_output": "50"
+  },
+  {
+    "id": 4,
+    "title": "Find sum of 'n' natural numbers",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the sum of first 'n' natural numbers using formula or loop.",
+    "examples": [
+      {
+        "input": "5",
+        "output": "15"
+      },
+      {
+        "input": "10",
+        "output": "55"
+      }
+    ],
+    "expected_output": "Sum of first n natural numbers"
+  },
+  {
+    "id": 5,
+    "title": "Find number of digits in a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Counts how many digits a number has.",
+    "examples": [
+      {
+        "input": "12345",
+        "output": "5"
+      },
+      {
+        "input": "789",
+        "output": "3"
+      }
+    ],
+    "expected_output": "Total number of digits"
+  },
+  {
+    "id": 6,
+    "title": "Reverse a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Reverses the digits of a given number.",
+    "examples": [
+      {
+        "input": "1234",
+        "output": "4321"
+      },
+      {
+        "input": "987",
+        "output": "789"
+      }
+    ],
+    "expected_output": "Reversed number"
+  },
+  {
+    "id": 7,
+    "title": "Find Armstrong number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks if a number is an Armstrong number (sum of cubes of digits equals the number).",
+    "examples": [
+      {
+        "input": "153",
+        "output": "Armstrong Number"
+      },
+      {
+        "input": "123",
+        "output": "Not an Armstrong Number"
+      }
+    ],
+    "expected_output": "Check Armstrong or not"
+  },
+  {
+    "id": 8,
+    "title": "Print number in words",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Displays each digit of a number in words.",
+    "examples": [
+      {
+        "input": "123",
+        "output": "One Two Three"
+      }
+    ],
+    "expected_output": "Digits in word form"
+  },
+  {
+    "id": 9,
+    "title": "Check if number is palindrome",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "A number is a palindrome if it reads the same backward.",
+    "examples": [
+      {
+        "input": "121",
+        "output": "Palindrome"
+      },
+      {
+        "input": "123",
+        "output": "Not Palindrome"
+      }
+    ],
+    "expected_output": "Palindrome status"
+  },
+  {
+    "id": 10,
+    "title": "Print N prime numbers and find sum and average",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Generates first N prime numbers and calculates sum and average.",
+    "examples": [
+      {
+        "input": "5",
+        "output": "2 3 5 7 11, Sum = 28, Avg = 5.6"
+      }
+    ],
+    "expected_output": "List, sum and average of N primes"
+  },
+  {
+    "id": 11,
+    "title": "Check if a number is perfect",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "A number is perfect if it is equal to the sum of its proper divisors.",
+    "examples": [
+      {
+        "input": "6",
+        "output": "Perfect Number"
+      },
+      {
+        "input": "10",
+        "output": "Not a Perfect Number"
+      }
+    ],
+    "expected_output": "Perfect or not"
+  },
+  {
+    "id": 12,
+    "title": "Find factorial of a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the factorial of a given number.",
+    "examples": [
+      {
+        "input": "5",
+        "output": "120"
+      },
+      {
+        "input": "3",
+        "output": "6"
+      }
+    ],
+    "expected_output": "Factorial value"
+  },
+  {
+    "id": 13,
+    "title": "Print Fibonacci series up to N",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Generates Fibonacci numbers up to a given number N.",
+    "examples": [
+      {
+        "input": "10",
+        "output": "0 1 1 2 3 5 8"
+      },
+      {
+        "input": "15",
+        "output": "0 1 1 2 3 5 8 13"
+      }
+    ],
+    "expected_output": "Fibonacci sequence"
+  },
+  {
+    "id": 14,
+    "title": "Check if year is a leap year",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Determines if a given year is a leap year or not.",
+    "examples": [
+      {
+        "input": "2020",
+        "output": "Leap Year"
+      },
+      {
+        "input": "2019",
+        "output": "Not a Leap Year"
+      }
+    ],
+    "expected_output": "Leap year status"
+  },
+  {
+    "id": 15,
+    "title": "Check if a number is even or odd",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Determines if a number is even or odd using modulus operator.",
+    "examples": [
+      {
+        "input": "4",
+        "output": "Even"
+      },
+      {
+        "input": "7",
+        "output": "Odd"
+      }
+    ],
+    "expected_output": "Even or Odd"
+  },
+  {
+    "id": 16,
+    "title": "Swap two numbers without using a third variable",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Swaps the values of two variables without using a third temporary variable.",
+    "examples": [
+      {
+        "input": "a = 5, b = 10",
+        "output": "a = 10, b = 5"
+      }
+    ],
+    "expected_output": "Swapped values"
+  },
+  {
+    "id": 17,
+    "title": "Find LCM and HCF of two numbers",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the Least Common Multiple and Highest Common Factor of two numbers.",
+    "examples": [
+      {
+        "input": "4 and 6",
+        "output": "LCM = 12, HCF = 2"
+      }
+    ],
+    "expected_output": "LCM and HCF"
+  },
+  {
+    "id": 18,
+    "title": "Check if number is prime",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Determines if a number is prime (only divisible by 1 and itself).",
+    "examples": [
+      {
+        "input": "7",
+        "output": "Prime Number"
+      },
+      {
+        "input": "9",
+        "output": "Not Prime"
+      }
+    ],
+    "expected_output": "Prime status"
+  },
+  {
+    "id": 19,
+    "title": "Print multiplication table of a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Displays the multiplication table of a given number up to 10.",
+    "examples": [
+      {
+        "input": "3",
+        "output": "3 6 9 12 15 18 21 24 27 30"
+      }
+    ],
+    "expected_output": "Multiplication table"
+  },
+  {
+    "id": 20,
+    "title": "Count vowels and consonants in a string",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Counts the number of vowels and consonants in a given string.",
+    "examples": [
+      {
+        "input": "hello",
+        "output": "Vowels: 2, Consonants: 3"
+      }
+    ],
+    "expected_output": "Vowel and consonant count"
+  },
+  {
+    "id": 21,
+    "title": "Convert Celsius to Fahrenheit",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Converts temperature from Celsius to Fahrenheit.",
+    "examples": [
+      {
+        "input": "0",
+        "output": "32"
+      },
+      {
+        "input": "100",
+        "output": "212"
+      }
+    ],
+    "expected_output": "Temperature in Fahrenheit"
+  },
+  {
+    "id": 22,
+    "title": "Convert decimal to binary",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Converts a decimal number to its binary equivalent.",
+    "examples": [
+      {
+        "input": "10",
+        "output": "1010"
+      },
+      {
+        "input": "5",
+        "output": "101"
+      }
+    ],
+    "expected_output": "Binary number"
+  },
+  {
+    "id": 23,
+    "title": "Calculate power of a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates base raised to the power exponent.",
+    "examples": [
+      {
+        "input": "2^3",
+        "output": "8"
+      },
+      {
+        "input": "5^2",
+        "output": "25"
+      }
+    ],
+    "expected_output": "Result of power"
+  },
+  {
+    "id": 24,
+    "title": "Find maximum of three numbers",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Finds the largest among three given numbers.",
+    "examples": [
+      {
+        "input": "3, 7, 5",
+        "output": "7"
+      }
+    ],
+    "expected_output": "Maximum number"
+  },
+  {
+    "id": 25,
+    "title": "Check alphabet is vowel or consonant",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks if a given alphabet is a vowel or consonant.",
+    "examples": [
+      {
+        "input": "a",
+        "output": "Vowel"
+      },
+      {
+        "input": "z",
+        "output": "Consonant"
+      }
+    ],
+    "expected_output": "Vowel or Consonant"
+  },
+  {
+    "id": 26,
+    "title": "Calculate area of circle",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the area of a circle using radius.",
+    "examples": [
+      {
+        "input": "r = 7",
+        "output": "153.938"
+      }
+    ],
+    "expected_output": "Area of circle"
+  },
+  {
+    "id": 27,
+    "title": "Print all ASCII values",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Prints ASCII values for characters A-Z and a-z.",
+    "examples": [
+      {
+        "input": "A",
+        "output": "65"
+      },
+      {
+        "input": "a",
+        "output": "97"
+      }
+    ],
+    "expected_output": "ASCII value"
+  },
+  {
+    "id": 28,
+    "title": "Find sum of digits of a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the sum of digits in a number.",
+    "examples": [
+      {
+        "input": "1234",
+        "output": "10"
+      }
+    ],
+    "expected_output": "Sum of digits"
+  },
+  {
+    "id": 29,
+    "title": "Check if a character is alphabet or not",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks whether a given character is an alphabet.",
+    "examples": [
+      {
+        "input": "A",
+        "output": "Alphabet"
+      },
+      {
+        "input": "1",
+        "output": "Not Alphabet"
+      }
+    ],
+    "expected_output": "Alphabet check"
+  },
+  {
+    "id": 30,
+    "title": "Find cube of a number",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the cube of a given number.",
+    "examples": [
+      {
+        "input": "3",
+        "output": "27"
+      },
+      {
+        "input": "5",
+        "output": "125"
+      }
+    ],
+    "expected_output": "Cube value"
+  },
+  {
+    "id": 31,
+    "title": "Check if triangle is valid",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks whether a triangle is valid based on angle sum property.",
+    "examples": [
+      {
+        "input": "60, 60, 60",
+        "output": "Valid Triangle"
+      },
+      {
+        "input": "90, 45, 45",
+        "output": "Valid Triangle"
+      }
+    ],
+    "expected_output": "Triangle validity"
+  },
+  {
+    "id": 32,
+    "title": "Check if character is uppercase or lowercase",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Determines if a character is uppercase or lowercase.",
+    "examples": [
+      {
+        "input": "A",
+        "output": "Uppercase"
+      },
+      {
+        "input": "z",
+        "output": "Lowercase"
+      }
+    ],
+    "expected_output": "Case of character"
+  },
+  {
+    "id": 33,
+    "title": "Find area of triangle using Heron's formula",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates the area of a triangle with given side lengths.",
+    "examples": [
+      {
+        "input": "a=3, b=4, c=5",
+        "output": "6"
+      }
+    ],
+    "expected_output": "Area of triangle"
+  },
+  {
+    "id": 34,
+    "title": "Calculate simple interest",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates simple interest using principal, rate, and time.",
+    "examples": [
+      {
+        "input": "P=1000, R=5, T=2",
+        "output": "100"
+      }
+    ],
+    "expected_output": "Simple Interest"
+  },
+  {
+    "id": 35,
+    "title": "Check if a number is divisible by another",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks if one number is divisible by another.",
+    "examples": [
+      {
+        "input": "10, 2",
+        "output": "Divisible"
+      },
+      {
+        "input": "10, 3",
+        "output": "Not Divisible"
+      }
+    ],
+    "expected_output": "Divisibility result"
+  },
+  {
+    "id": 36,
+    "title": "Find perimeter of a rectangle",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Calculates perimeter using length and width.",
+    "examples": [
+      {
+        "input": "L=5, W=3",
+        "output": "16"
+      }
+    ],
+    "expected_output": "Perimeter value"
+  },
+  {
+    "id": 37,
+    "title": "Find average of N numbers",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Computes average of a list of numbers.",
+    "examples": [
+      {
+        "input": "[1, 2, 3, 4, 5]",
+        "output": "3"
+      }
+    ],
+    "expected_output": "Average value"
+  },
+  {
+    "id": 38,
+    "title": "Check if a string is palindrome",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks if a string reads the same forward and backward.",
+    "examples": [
+      {
+        "input": "madam",
+        "output": "Palindrome"
+      },
+      {
+        "input": "hello",
+        "output": "Not Palindrome"
+      }
+    ],
+    "expected_output": "String palindrome status"
+  },
+  {
+    "id": 39,
+    "title": "Check if number is a power of 2",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Checks whether a number is a power of 2.",
+    "examples": [
+      {
+        "input": "8",
+        "output": "True"
+      },
+      {
+        "input": "10",
+        "output": "False"
+      }
+    ],
+    "expected_output": "True/False"
+  },
+  {
+    "id": 40,
+    "title": "Print pattern of stars in pyramid",
+    "difficulty": "basic",
+    "category": "fundamental",
+    "explanation": "Prints a star pyramid pattern up to N rows.",
+    "examples": [
+      {
+        "input": "3",
+        "output": "\n  \n \n*"
+      }
+    ],
+    "expected_output": "Star pyramid pattern"
+  },
+  {
+    "id": 41,
+    "title": "Two Sum",
+    "difficulty": "easy",
+    "category": "array",
+    "explanation": "Find two numbers in the array that add up to a given target.",
+    "input": "nums = [2, 7, 11, 15], target = 9",
+    "output": "[0, 1]",
+    "expected_output": "[0, 1]"
+  },
+  {
+    "id": 42,
+    "title": "Contains Duplicate",
+    "difficulty": "easy",
+    "category": "array",
+    "explanation": "Check if any value appears more than once in the array.",
+    "input": "nums = [1, 2, 3, 1]",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 43,
+    "title": "Time to Buy and Sell Stock",
+    "difficulty": "easy",
+    "category": "array",
+    "explanation": "Find the best time to buy and sell stock to maximize profit.",
+    "input": "prices = [7, 1, 5, 3, 6, 4]",
+    "output": "5",
+    "expected_output": "5"
+  },
+  {
+    "id": 44,
+    "title": "Second Largest",
+    "difficulty": "easy",
+    "category": "array",
+    "explanation": "Find the second largest number in an array.",
+    "input": "nums = [12, 35, 1, 10, 34, 1]",
+    "output": "34",
+    "expected_output": "34"
+  },
+  {
+    "id": 45,
+    "title": "Rotate Array",
+    "difficulty": "medium",
+    "category": "array",
+    "explanation": "Rotate the elements of an array by k steps to the right.",
+    "input": "nums = [1, 2, 3, 4, 5, 6, 7], k = 3",
+    "output": "[5, 6, 7, 1, 2, 3, 4]",
+    "expected_output": "[5, 6, 7, 1, 2, 3, 4]"
+  },
+  {
+    "id": 46,
+    "title": "Best Time to Buy and Sell Stock II",
+    "difficulty": "easy",
+    "category": "array",
+    "explanation": "Find the maximum profit by buying and selling stock multiple times.",
+    "input": "prices = [1, 7, 5, 3, 6, 4]",
+    "output": "7",
+    "expected_output": "7"
+  },
+  {
+    "id": 47,
+    "title": "Maximum Subarray Sum",
+    "difficulty": "medium",
+    "category": "array",
+    "explanation": "Find the contiguous subarray with the maximum sum.",
+    "input": "nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]",
+    "output": "6",
+    "expected_output": "6"
+  },
+  {
+    "id": 48,
+    "title": "Linear Search",
+    "difficulty": "easy",
+    "category": "searching",
+    "explanation": "Search for a value in the array by checking each element sequentially.",
+    "input": "nums = [10, 20, 30, 40], target = 20",
+    "output": "1",
+    "expected_output": "1"
+  },
+  {
+    "id": 49,
+    "title": "Binary Search",
+    "difficulty": "easy",
+    "category": "searching",
+    "explanation": "Search for a value in a sorted array by repeatedly dividing the search interval in half.",
+    "input": "nums = [1, 2, 3, 4, 5, 6], target = 4",
+    "output": "3",
+    "expected_output": "3"
+  },
+  {
+    "id": 50,
+    "title": "Search Insert Position",
+    "difficulty": "medium",
+    "category": "searching",
+    "explanation": "Find the index where a target value should be inserted in a sorted array.",
+    "input": "nums = [1, 3, 5, 6], target = 5",
+    "output": "2",
+    "expected_output": "2"
+  },
+  {
+    "id": 51,
+    "title": "Single Element Sorted Array",
+    "difficulty": "medium",
+    "category": "searching",
+    "explanation": "Find the single element in a sorted array where all other elements appear twice.",
+    "input": "nums = [1, 1, 2, 2, 3, 3, 4]",
+    "output": "4",
+    "expected_output": "4"
+  },
+  {
+    "id": 52,
+    "title": "Search Element in 2D Array",
+    "difficulty": "medium",
+    "category": "searching",
+    "explanation": "Search for a target element in a 2D matrix.",
+    "input": "matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]], target = 5",
+    "output": "[1, 1]",
+    "expected_output": "[1, 1]"
+  },
+  {
+    "id": 53,
+    "title": "Anagram",
+    "difficulty": "easy",
+    "category": "string",
+    "explanation": "Check if two strings are anagrams of each other.",
+    "input": "s = 'anagram', t = 'nagaram'",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 54,
+    "title": "Non-Repeating Character",
+    "difficulty": "easy",
+    "category": "string",
+    "explanation": "Find the first non-repeating character in a string.",
+    "input": "s = 'loveleetcode'",
+    "output": "v",
+    "expected_output": "v"
+  },
+  {
+    "id": 55,
+    "title": "Group Anagram",
+    "difficulty": "medium",
+    "category": "string",
+    "explanation": "Group strings that are anagrams of each other.",
+    "input": "strs = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']",
+    "output": "[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]",
+    "expected_output": "[['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]"
+  },
+  {
+    "id": 56,
+    "title": "String Rotation of Each Other",
+    "difficulty": "medium",
+    "category": "string",
+    "explanation": "Check if one string is a rotation of another.",
+    "input": "s1 = 'abcde', s2 = 'cdeab'",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 57,
+    "title": "Valid Palindrome",
+    "difficulty": "easy",
+    "category": "string",
+    "explanation": "Check if a string is a palindrome (reads the same forward and backward).",
+    "input": "s = 'racecar'",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 58,
+    "title": "Row Wise Printing",
+    "difficulty": "easy",
+    "category": "2d array",
+    "explanation": "Print the elements of a 2D array row by row.",
+    "input": "matrix = [[1, 2], [3, 4]]",
+    "output": "[1, 2, 3, 4]",
+    "expected_output": "[1, 2, 3, 4]"
+  },
+  {
+    "id": 59,
+    "title": "Column Wise Printing",
+    "difficulty": "easy",
+    "category": "2d array",
+    "explanation": "Print the elements of a 2D array column by column.",
+    "input": "matrix = [[1, 2], [3, 4]]",
+    "output": "[1, 3, 2, 4]",
+    "expected_output": "[1, 3, 2, 4]"
+  },
+  {
+    "id": 60,
+    "title": "Spiral Matrix",
+    "difficulty": "medium",
+    "category": "2d array",
+    "explanation": "Print the elements of a matrix in spiral order.",
+    "input": "matrix = [[1, 2], [3, 4]]",
+    "output": "[1, 2, 4, 3]",
+    "expected_output": "[1, 2, 4, 3]"
+  },
+  {
+    "id": 61,
+    "title": "Rotate Image",
+    "difficulty": "medium",
+    "category": "2d array",
+    "explanation": "Rotate a given 2D matrix 90 degrees clockwise.",
+    "input": "matrix = [[1, 2], [3, 4]]",
+    "output": "[[3, 1], [4, 2]]",
+    "expected_output": "[[3, 1], [4, 2]]"
+  },
+  {
+    "id": 62,
+    "title": "Move Zeroes to End",
+    "difficulty": "medium",
+    "category": "sorting",
+    "explanation": "Move all zero elements in an array to the end while maintaining the relative order of non-zero elements.",
+    "input": "nums = [0, 1, 0, 3, 12]",
+    "output": "[1, 3, 12, 0, 0]",
+    "expected_output": "[1, 3, 12, 0, 0]"
+  },
+  {
+    "id": 63,
+    "title": "Sort 0s, 1s, 2s",
+    "difficulty": "easy",
+    "category": "sorting",
+    "explanation": "Sort an array containing only 0s, 1s, and 2s without using the built-in sort function.",
+    "input": "nums = [2, 0, 2, 1, 1, 0]",
+    "output": "[0, 0, 1, 1, 2, 2]",
+    "expected_output": "[0, 0, 1, 1, 2, 2]"
+  },
+  {
+    "id": 64,
+    "title": "Bubble Sort",
+    "difficulty": "easy",
+    "category": "sorting",
+    "explanation": "Sort an array using the bubble sort algorithm, where the largest element bubbles to the end with each pass.",
+    "input": "nums = [64, 34, 25, 12, 22, 11, 90]",
+    "output": "[11, 12, 22, 25, 34, 64, 90]",
+    "expected_output": "[11, 12, 22, 25, 34, 64, 90]"
+  },
+  {
+    "id": 65,
+    "title": "Quick Sort",
+    "difficulty": "medium",
+    "category": "sorting",
+    "explanation": "Sort an array using the quick sort algorithm, which uses divide-and-conquer and partitioning of elements.",
+    "input": "nums = [10, 7, 8, 9, 1, 5]",
+    "output": "[1, 5, 7, 8, 9, 10]",
+    "expected_output": "[1, 5, 7, 8, 9, 10]"
+  },
+  {
+    "id": 66,
+    "title": "Selection Sort",
+    "difficulty": "easy",
+    "category": "sorting",
+    "explanation": "Sort an array by repeatedly finding the minimum element and swapping it with the first unsorted element.",
+    "input": "nums = [64, 34, 25, 12, 22, 11, 90]",
+    "output": "[11, 12, 22, 25, 34, 64, 90]",
+    "expected_output": "[11, 12, 22, 25, 34, 64, 90]"
+  },
+  {
+    "id": 67,
+    "title": "Insertion Sort",
+    "difficulty": "easy",
+    "category": "sorting",
+    "explanation": "Sort an array by repeatedly taking one element and inserting it into its correct position.",
+    "input": "nums = [12, 11, 13, 5, 6]",
+    "output": "[5, 6, 11, 12, 13]",
+    "expected_output": "[5, 6, 11, 12, 13]"
+  },
+  {
+    "id": 68,
+    "title": "Merge Sort",
+    "difficulty": "medium",
+    "category": "sorting",
+    "explanation": "Sort an array using the merge sort algorithm, which divides the array into subarrays and merges them.",
+    "input": "nums = [38, 27, 43, 3, 9, 82, 10]",
+    "output": "[3, 9, 10, 27, 38, 43, 82]",
+    "expected_output": "[3, 9, 10, 27, 38, 43, 82]"
+  },
+  {
+    "id": 69,
+    "title": "Print the Middle of a Given Linked List",
+    "difficulty": "medium",
+    "category": "linked list",
+    "explanation": "Find and print the middle element of a linked list.",
+    "input": "head = [1, 2, 3, 4, 5]",
+    "output": "3",
+    "expected_output": "3"
+  },
+  {
+    "id": 70,
+    "title": "Reverse a Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Reverse the given linked list.",
+    "input": "head = [1, 2, 3, 4, 5]",
+    "output": "[5, 4, 3, 2, 1]",
+    "expected_output": "[5, 4, 3, 2, 1]"
+  },
+  {
+    "id": 71,
+    "title": "Deletion in Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Delete a specific node from a linked list.",
+    "input": "head = [1, 2, 3, 4], target = 3",
+    "output": "[1, 2, 4]",
+    "expected_output": "[1, 2, 4]"
+  },
+  {
+    "id": 72,
+    "title": "Reverse Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Reverse the given linked list.",
+    "input": "head = [1, 2, 3, 4, 5]",
+    "output": "[5, 4, 3, 2, 1]",
+    "expected_output": "[5, 4, 3, 2, 1]"
+  },
+  {
+    "id": 73,
+    "title": "Remove Duplicate Element",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Remove all duplicate elements from a linked list.",
+    "input": "head = [1, 2, 2, 3, 4, 4]",
+    "output": "[1, 2, 3, 4]",
+    "expected_output": "[1, 2, 3, 4]"
+  },
+  {
+    "id": 74,
+    "title": "Create a Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Create a linked list from a given array of elements.",
+    "input": "arr = [1, 2, 3, 4, 5]",
+    "output": "[1, 2, 3, 4, 5]",
+    "expected_output": "[1, 2, 3, 4, 5]"
+  },
+  {
+    "id": 75,
+    "title": "Create a Double Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Create a double linked list from a given array of elements.",
+    "input": "arr = [1, 2, 3, 4]",
+    "output": "[1 <-> 2 <-> 3 <-> 4]",
+    "expected_output": "[1 <-> 2 <-> 3 <-> 4]"
+  },
+  {
+    "id": 76,
+    "title": "Merge Two Linked Lists",
+    "difficulty": "medium",
+    "category": "linked list",
+    "explanation": "Merge two sorted linked lists into one sorted linked list.",
+    "input": "list1 = [1, 3, 5], list2 = [2, 4, 6]",
+    "output": "[1, 2, 3, 4, 5, 6]",
+    "expected_output": "[1, 2, 3, 4, 5, 6]"
+  },
+  {
+    "id": 77,
+    "title": "Add Element to Linked List",
+    "difficulty": "medium",
+    "category": "linked list",
+    "explanation": "Add an element to the end of the linked list.",
+    "input": "head = [1, 2, 3], value = 4",
+    "output": "[1, 2, 3, 4]",
+    "expected_output": "[1, 2, 3, 4]"
+  },
+  {
+    "id": 78,
+    "title": "Search an Element in Linked List",
+    "difficulty": "easy",
+    "category": "linked list",
+    "explanation": "Search for an element in a linked list.",
+    "input": "head = [1, 2, 3, 4], target = 3",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 79,
+    "title": "Implement Stack Using Array",
+    "difficulty": "easy",
+    "category": "stack",
+    "explanation": "Implement a stack data structure using an array, with operations like push, pop, peek, and isEmpty.",
+    "input": "stack = []",
+    "output": "After pushing 10, stack = [10]",
+    "expected_output": "After pushing 10, stack = [10]"
+  },
+  {
+    "id": 80,
+    "title": "Implement Stack Using Linked List",
+    "difficulty": "easy",
+    "category": "stack",
+    "explanation": "Implement a stack data structure using a linked list, with operations like push, pop, peek, and isEmpty.",
+    "input": "stack = []",
+    "output": "After pushing 10, stack = [10]",
+    "expected_output": "After pushing 10, stack = [10]"
+  },
+  {
+    "id": 81,
+    "title": "Infix to Postfix Conversion",
+    "difficulty": "medium",
+    "category": "stack",
+    "explanation": "Convert an infix expression to postfix notation using a stack.",
+    "input": "infix = 'A + B * C'",
+    "output": "postfix = 'A B C * +'",
+    "expected_output": "postfix = 'A B C * +'"
+  },
+  {
+    "id": 82,
+    "title": "Infix to Prefix Conversion",
+    "difficulty": "medium",
+    "category": "stack",
+    "explanation": "Convert an infix expression to prefix notation using a stack.",
+    "input": "infix = 'A + B * C'",
+    "output": "prefix = '+ A * B C'",
+    "expected_output": "prefix = '+ A * B C'"
+  },
+  {
+    "id": 83,
+    "title": "Check for Balanced Parentheses",
+    "difficulty": "medium",
+    "category": "stack",
+    "explanation": "Check if the parentheses in a given string are balanced using a stack.",
+    "input": "expression = '(a + b) * (c + d)'",
+    "output": "true",
+    "expected_output": "true"
+  },
+  {
+    "id": 84,
+    "title": "Implement Queue using Array",
+    "difficulty": "easy",
+    "category": "queue",
+    "explanation": "Use a fixed-size array with front and rear pointers.",
+    "input": "Enqueue(10), Enqueue(20), Dequeue(), Enqueue(30)",
+    "output": "[20, 30]",
+    "expected_output": "[20, 30]"
+  },
+  {
+    "id": 85,
+    "title": "Implement Queue using Linked List",
+    "difficulty": "easy",
+    "category": "queue",
+    "explanation": "Use nodes with pointers to build FIFO structure.",
+    "input": "Enqueue(1), Enqueue(2), Enqueue(3), Dequeue()",
+    "output": "[2, 3]",
+    "expected_output": "[2, 3]"
+  },
+  {
+    "id": 86,
+    "title": "Implement Circular Queue",
+    "difficulty": "medium",
+    "category": "queue",
+    "explanation": "Use modular arithmetic to wrap around the queue using an array.",
+    "input": "Enqueue(1), Enqueue(2), Enqueue(3), Dequeue(), Enqueue(4)",
+    "output": "[2, 3, 4]",
+    "expected_output": "[2, 3, 4]"
+  },
+  {
+    "id": 87,
+    "title": "Implement Deque",
+    "difficulty": "medium",
+    "category": "queue",
+    "explanation": "A double-ended queue where insert and delete is allowed from both ends.",
+    "input": "InsertFront(1), InsertLast(2), DeleteFront(), InsertLast(3)",
+    "output": "[2, 3]",
+    "expected_output": "[2, 3]"
+  },
+  {
+    "id": 88,
+    "title": "Print all elements of a graph in new lines",
+    "difficulty": "medium",
+    "category": "graph",
+    "explanation": "Use BFS or DFS to print each connected component on a new line.",
+    "input": "Graph: 1-2, 3-4",
+    "output": "1 2\n3 4",
+    "expected_output": "1 2\n3 4"
+  },
+  {
+    "id": 89,
+    "title": "Factorial Calculation (Recursion)",
+    "difficulty": "easy",
+    "category": "recursion",
+    "explanation": "Base case: 0! = 1, Recursive call: n * factorial(n-1).",
+    "input": "5",
+    "output": "120",
+    "expected_output": "120"
+  },
+  {
+    "id": 90,
+    "title": "Fibonacci Series",
+    "difficulty": "easy",
+    "category": "recursion",
+    "explanation": "Recursive function with base cases for n=0 and n=1.",
+    "input": "6",
+    "output": "0 1 1 2 3 5",
+    "expected_output": "0 1 1 2 3 5"
+  },
+  {
+    "id": 91,
+    "title": "Binary Search",
+    "difficulty": "medium",
+    "category": "array",
+    "explanation": "Use divide and conquer to search in a sorted array.",
+    "input": "Array = [1, 3, 5, 7, 9], target = 5",
+    "output": "2",
+    "expected_output": "2"
+  },
+  {
+    "id": 92,
+    "title": "Reverse a Linked List Using Recursion",
+    "difficulty": "medium",
+    "category": "linked list",
+    "explanation": "Use recursion to reverse the pointer directions.",
+    "input": "1 -> 2 -> 3 -> NULL",
+    "output": "3 -> 2 -> 1 -> NULL",
+    "expected_output": "3 -> 2 -> 1 -> NULL"
+  },
+  {
+    "id": 93,
+    "title": "Sum of Array Using Tail Recursion",
+    "difficulty": "medium",
+    "category": "recursion",
+    "explanation": "Use an accumulator parameter to hold the sum.",
+    "input": "[1, 2, 3, 4]",
+    "output": "10",
+    "expected_output": "10"
+  },
+  {
+    "id": 94,
+    "title": "Reverse a String (Recursion)",
+    "difficulty": "medium",
+    "category": "string",
+    "explanation": "Recursively build reversed string from last character.",
+    "input": "hello",
+    "output": "olleh",
+    "expected_output": "olleh"
+  },
+  {
+    "id": 95,
+    "title": "Create a Tree Using Linked List",
+    "difficulty": "easy",
+    "category": "tree",
+    "explanation": "Construct a binary tree by creating nodes with left and right pointers.",
+    "input": "Insert: [1, 2, 3]",
+    "output": "Root: 1, Left: 2, Right: 3",
+    "expected_output": "Root: 1, Left: 2, Right: 3"
+  },
+  {
+    "id": 96,
+    "title": "Height of Binary Tree",
+    "difficulty": "easy",
+    "category": "tree",
+    "explanation": "Use recursion to find the maximum depth of left and right subtrees.",
+    "input": "Tree: [1, 2, 3, null, null, 4]",
+    "output": "3",
+    "expected_output": "3"
+  },
+  {
+    "id": 97,
+    "title": "Zigzag Tree Traversal",
+    "difficulty": "medium",
+    "category": "tree",
+    "explanation": "Alternate between left-to-right and right-to-left level order traversal.",
+    "input": "Tree: [1, 2, 3, 4, 5, 6, 7]",
+    "output": "[[1], [3, 2], [4, 5, 6, 7]]",
+    "expected_output": "[[1], [3, 2], [4, 5, 6, 7]]"
+  },
+  {
+    "id": 98,
+    "title": "Tree Traversal Inorder",
+    "difficulty": "medium",
+    "category": "tree",
+    "explanation": "Traverse left subtree, visit root, then traverse right subtree.",
+    "input": "Tree: [1, null, 2, 3]",
+    "output": "[1, 3, 2]",
+    "expected_output": "[1, 3, 2]"
+  },
+  {
+    "id": 99,
+    "title": "Tree Traversal Postorder",
+    "difficulty": "medium",
+    "category": "tree",
+    "explanation": "Traverse left and right subtrees before visiting the root node.",
+    "input": "Tree: [1, null, 2, 3]",
+    "output": "[3, 2, 1]",
+    "expected_output": "[3, 2, 1]"
+  },
+  {
+    "id": 100,
+    "title": "Create Graph Using Linked List",
+    "difficulty": "easy",
+    "category": "graph",
+    "explanation": "Build adjacency list representation using linked lists.",
+    "input": "Edges: [(1,2), (1,3), (2,4)]",
+    "output": "{1:[2,3], 2:[4], 3:[], 4:[]}",
+    "expected_output": "{1:[2,3], 2:[4], 3:[], 4:[]}"
+  },
+  {
+    "id": 101,
+    "title": "BFS of Graph Traversal",
+    "difficulty": "easy",
+    "category": "graph",
+    "explanation": "Use a queue to traverse graph level-by-level.",
+    "input": "Graph: {0:[1,2], 1:[3], 2:[4], 3:[], 4:[]}, Start: 0",
+    "output": "[0, 1, 2, 3, 4]",
+    "expected_output": "[0, 1, 2, 3, 4]"
+  },
+  {
+    "id": 102,
+    "title": "DFS of Graph Traversal",
+    "difficulty": "easy",
+    "category": "graph",
+    "explanation": "Use stack or recursion to explore as deep as possible.",
+    "input": "Graph: {0:[1,2], 1:[3], 2:[4], 3:[], 4:[]}, Start: 0",
+    "output": "[0, 1, 3, 2, 4]",
+    "expected_output": "[0, 1, 3, 2, 4]"
+  },
+  {
+    "id": 103,
+    "title": "Union Find (Disjoint Set)",
+    "difficulty": "easy",
+    "category": "graph",
+    "explanation": "Use path compression and union by rank for efficiency.",
+    "input": "Union(1,2), Union(2,3), Find(1), Find(3)",
+    "output": "[1, 1]",
+    "expected_output": "[1, 1]"
+  },
+  {
+    "id": 104,
+    "title": "Level of Node in Graph",
+    "difficulty": "medium",
+    "category": "graph",
+    "explanation": "Use BFS to track levels from a source node.",
+    "input": "Graph: {1:[2,3], 2:[4], 3:[], 4:[]}, Start: 1",
+    "output": "{1:0, 2:1, 3:1, 4:2}",
+    "expected_output": "{1:0, 2:1, 3:1, 4:2}"
+  },
+  {
+    "id": 105,
+    "title": "Climbing Stairs",
+    "difficulty": "easy",
+    "category": "dp",
+    "explanation": "Fibonacci variation: total ways to climb n steps using 1 or 2 steps.",
+    "input": "n = 5",
+    "output": "8",
+    "expected_output": "8"
+  },
+  {
+    "id": 106,
+    "title": "Min Cost Climbing Stairs",
+    "difficulty": "easy",
+    "category": "dp",
+    "explanation": "Dynamic programming approach to find minimum cost to reach top.",
+    "input": "cost = [10, 15, 20]",
+    "output": "15",
+    "expected_output": "15"
+  },
+  {
+    "id": 107,
+    "title": "Coin Change",
+    "difficulty": "easy",
+    "category": "dp",
+    "explanation": "Find minimum number of coins that make up a given amount.",
+    "input": "coins = [1, 2, 5], amount = 11",
+    "output": "3",
+    "expected_output": "3"
+  },
+  {
+    "id": 108,
+    "title": "House Robber",
+    "difficulty": "medium",
+    "category": "dp",
+    "explanation": "Choose non-adjacent houses to rob for maximum sum.",
+    "input": "[2, 7, 9, 3, 1]",
+    "output": "12",
+    "expected_output": "12"
+  },
+  {
+    "id": 109,
+    "title": "Counting Bits",
+    "difficulty": "easy",
+    "category": "bit manipulation",
+    "explanation": "Count number of 1s in binary representation of every number up to n.",
+    "input": "n = 5",
+    "output": "[0,1,1,2,1,2]",
+    "expected_output": "[0,1,1,2,1,2]"
+  },
+  {
+    "id": 110,
+    "title": "Reverse Bits",
+    "difficulty": "easy",
+    "category": "bit manipulation",
+    "explanation": "Reverse the bits of a 32-bit unsigned integer.",
+    "input": "Input = 43261596 (binary: 00000010100101000001111010011100)",
+    "output": "964176192 (binary: 00111001011110000010100101000000)",
+    "expected_output": "964176192"
+  },
+  {
+    "id": 111,
+    "title": "Number of 1 Bits",
+    "difficulty": "easy",
+    "category": "bit manipulation",
+    "explanation": "Use bit masking to count number of 1s in binary representation.",
+    "input": "n = 11 (binary: 00000000000000000000000000001011)",
+    "output": "3",
+    "expected_output": "3"
+  }
+]

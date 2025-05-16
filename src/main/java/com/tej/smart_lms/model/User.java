@@ -41,4 +41,7 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> completedProjects = new HashSet<>();
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private Set<String> completedDsaQuestion = new HashSet<>();
+
 }

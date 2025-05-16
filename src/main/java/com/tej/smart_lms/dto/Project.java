@@ -1,7 +1,5 @@
-package com.tej.smart_lms.model;
+package com.tej.smart_lms.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,11 +13,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Project {
+    private String id;
     private String projectTitle;
     private String description;
     private List<String> technologies;
     private String difficulty;
-    private List<Section> sections; // 🔥 Add this line
+    private List<Section> sections;
 
 
 }

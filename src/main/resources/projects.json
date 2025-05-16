@@ -1,5 +1,6 @@
 [
   {
+    "id" : "1",
     "projectTitle": "Responsive Notes App",
     "description": "An end-to-end responsive ToDo/Notes app using HTML, CSS, and JavaScript. Includes icons and supports creating, editing, deleting, and marking notes as completed. Fully functional on mobile and desktop.",
     "technologies": ["HTML", "CSS", "JavaScript"],
@@ -40,6 +41,7 @@
   },
 
   {
+    "id" : "2",
   "projectTitle": "Responsive Quiz App",
   "description": "A fully functional, mobile-first quiz application built using HTML, CSS, and JavaScript. Users can answer multiple-choice questions, receive instant feedback, and view scores. The UI is modern and adapts seamlessly to mobile and desktop screens.",
   "technologies": ["HTML", "CSS", "JavaScript"],
@@ -79,6 +81,7 @@
   ]
 },
 {
+  "id" : "3",
   "projectTitle": "Responsive Portfolio Website",
   "description": "A modern developer portfolio built using React and Tailwind CSS. It features a responsive design with sections like Navbar, Hero, About, Projects, and Footer. Optimized for desktop and mobile viewing.",
   "technologies": ["React", "Tailwind CSS"],
@@ -144,6 +147,7 @@
   ]
 },
 {
+  "id" : "4",
   "projectTitle": "Movie App using React and Tailwind CSS",
   "description": "A responsive Movie App built with React and Tailwind CSS. It fetches trending movies using the TMDB API and displays them in a card layout with a search functionality.",
   "technologies": ["React", "Tailwind CSS", "Axios", "TMDB API"],

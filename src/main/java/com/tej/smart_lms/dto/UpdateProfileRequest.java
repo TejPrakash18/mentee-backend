@@ -1,0 +1,18 @@
+package com.tej.smart_lms.dto;
+
+import jakarta.persistence.Column;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.Set;
+
+@Getter
+@Setter
+public class UpdateProfileRequest {
+    @Column(unique = true)
+    private String userName;
+    private String password;
+    private String location;
+    private Set<String> skills;
+
+}

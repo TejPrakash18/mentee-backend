@@ -12,17 +12,18 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
+                .formLogin().disable()
+                .logout().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/user/register",
-                        "/api/user/login",
+                .requestMatchers(
+                        "/api/auth/**",
                         "/api/projects/**",
-                        "/api/user/profile",
-                        "/api/user/complete",
-                        "/api/user/update").permitAll()
-                .anyRequest().authenticated();
+                        "/api/user/**",
+                        "api/dsa/**"
+                ).permitAll() // ✅ public routes for your app
+                .anyRequest().permitAll(); // ✅ allow all other routes
         return http.build();
     }
-
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
