@@ -3,78 +3,89 @@ package com.tej.smart_lms.controller;
 import com.tej.smart_lms.dto.UpdateProfileRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.services.UserService;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @GetMapping("/profile")
-    public ResponseEntity<?> getProfile(
-            @RequestParam(name = "username", required = false) String usernameParam,
-            HttpSession session) {
+    public ResponseEntity<?> getProfile(@RequestParam(name = "username", required = false) String usernameParam) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        // 1) Are they logged in?
-        String sessionUser = (String) session.getAttribute("user");
-        if (sessionUser == null) {
-            return new ResponseEntity<>(
-                    Map.of("error", "unauthorized"),
-                    HttpStatus.UNAUTHORIZED
-            );
+        if (authentication == null || !authentication.isAuthenticated()) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", "Unauthorized"));
         }
 
-        // 2) If they supplied a username param, it must match their session user
-        if (usernameParam != null && !usernameParam.equals(sessionUser)) {
-            return new ResponseEntity<>(
-                    Map.of("error", "unauthorized"),
-                    HttpStatus.UNAUTHORIZED
-            );
+        String loggedInUsername = authentication.getName();
+
+        if (usernameParam != null && !usernameParam.equals(loggedInUsername)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN)
+                    .body(Map.of("error", "Access denied to another user's profile"));
         }
 
-        // 3) Determine whose profile to fetch
-        String targetUser = (usernameParam != null && !usernameParam.isBlank())
-                ? usernameParam
-                : sessionUser;
+        String targetUsername = (usernameParam != null && !usernameParam.isBlank()) ? usernameParam : loggedInUsername;
+        Optional<User> userOpt = userService.getByUsername(targetUsername);
 
-        // 4) Fetch by the targetUser
-        Optional<User> maybeUser = userService.getByUsername(targetUser);
-        if (maybeUser.isEmpty()) {
-            return new ResponseEntity<>(
-                    Map.of("error", "User not found"),
-                    HttpStatus.NOT_FOUND
-            );
+        if (userOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", "User not found"));
         }
 
-        // 5) Return the user, stripping out the password
-        User user = maybeUser.get();
-        user.setPassword(null);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        User user = userOpt.get();
+        user.setPassword(null); // never expose password
+        return ResponseEntity.ok(user);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<User> updateProfile(
-            @RequestBody UpdateProfileRequest updateProfileRequest, HttpSession session) {
+    public ResponseEntity<?> updateProfile(@RequestBody UpdateProfileRequest updateProfileRequest) {
 
-        String username = (String) session.getAttribute("user");
-        if (username == null) {
-            return ResponseEntity.status(401).build(); // not logged in
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication == null || !authentication.isAuthenticated()) {
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Unauthorized");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(errorResponse);
         }
-        Optional<User> updated = userService.updateProfile(username, updateProfileRequest.getUserName(), updateProfileRequest.getLocation(),
-                updateProfileRequest.getPassword(), updateProfileRequest.getSkills());
-        return updated.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+
+        String username = authentication.getName();
+
+        Optional<User> updated = userService.updateProfile(
+                username,
+                updateProfileRequest.getUserName(),  // newName
+                updateProfileRequest.getEmail(),
+                updateProfileRequest.getLocation(),
+                updateProfileRequest.getCollege(),
+                updateProfileRequest.getPassword(),
+                updateProfileRequest.getSkills()
+        );
+
+        if (updated.isPresent()) {
+            User user = updated.get();
+            user.setPassword(null); // never return password
+            return ResponseEntity.ok(user);
+        } else {
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "User not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
+        }
     }
+
+
 
 }

@@ -13,7 +13,8 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/dsa")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+
 public class DsaController {
 
     @Autowired private DsaService dsaService;
@@ -24,7 +25,7 @@ public class DsaController {
         return ResponseEntity.ok(dsaService.getAllDsaQuestion());
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("question/{id}")
     public ResponseEntity<DSA> getById(@PathVariable String id) {
         return ResponseEntity.ok(dsaService.getById(id));
     }

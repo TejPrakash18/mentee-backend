@@ -23,16 +23,22 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public Optional<User> updateProfile(String username, String newName, String location, String newPassword,Set<String> skills) {
+    public Optional<User> updateProfile(String username, String newName, String email,
+                                        String location, String college, String newPassword, Set<String> skills) {
         Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
+
             if (location != null) user.setLocation(location);
-            if (skills != null) user.getSkills().addAll(skills);
+            if (skills != null) user.setSkills(skills); // Avoid duplicate merge
             if (newName != null) user.setName(newName);
-            if (newPassword != null) user.setPassword(passwordEncoder.encode(user.getPassword()));
+            if (college != null) user.setCollege(college);
+            if (email != null) user.setEmail(email);
+            if (newPassword != null) user.setPassword(passwordEncoder.encode(newPassword));
+
             return Optional.of(userRepository.save(user));
         }
         return Optional.empty();
     }
+
 }

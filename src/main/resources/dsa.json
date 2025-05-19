@@ -657,8 +657,12 @@
     "difficulty": "easy",
     "category": "array",
     "explanation": "Find two numbers in the array that add up to a given target.",
-    "input": "nums = [2, 7, 11, 15], target = 9",
-    "output": "[0, 1]",
+   "examples" : [
+     {
+       "input": "nums = [2, 7, 11, 15], target = 9",
+       "output": "[0, 1]"
+     }
+   ],
     "expected_output": "[0, 1]"
   },
   {

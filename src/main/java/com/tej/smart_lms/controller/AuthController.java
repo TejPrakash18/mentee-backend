@@ -5,37 +5,42 @@ import com.tej.smart_lms.dto.LoginRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.services.AuthService;
 import com.tej.smart_lms.services.UserService;
+import com.tej.smart_lms.utils.JwtUtil;
 import jakarta.servlet.http.HttpSession;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
+
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class AuthController {
 
     @Autowired
     private UserService userService;
     @Autowired private AuthService authService;
+    @Autowired private JwtUtil jwtUtil;
 
     @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@Valid @RequestBody User user) {
+    public ResponseEntity<User> registerUser(@RequestBody User user) {
         return ResponseEntity.ok(authService.register(user));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest request, HttpSession session) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         boolean success = authService.login(request.getUsername(), request.getPassword());
         if (success) {
-            session.setAttribute("user", request.getUsername());
-            return ResponseEntity.ok("Login successful");
+            String token = jwtUtil.generateToken(request.getUsername());
+            return ResponseEntity.ok(Collections.singletonMap("token", token));
         } else {
             return ResponseEntity.status(401).body("Invalid credentials");
         }
     }
+
+
 
     @PostMapping("/logout")
     public ResponseEntity<String> logout(HttpSession session) {
