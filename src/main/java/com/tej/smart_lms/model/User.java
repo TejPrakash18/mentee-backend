@@ -1,6 +1,5 @@
 package com.tej.smart_lms.model;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -18,19 +17,16 @@ import java.util.Set;
 @AllArgsConstructor
 @Table(name = "users")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(unique = true, nullable = false)
+    private String username;
 
     @NotBlank(message = "Name is required")
     private String name;
 
     @Column(unique = true)
-    @NotBlank(message = "Username is required")
-    private String username;
-
-    @Column(unique = true)
-    @NotBlank(message = "Username is required")
+    @NotBlank(message = "Email is required")
     private String email;
 
     @NotBlank(message = "Password is required")
@@ -39,7 +35,9 @@ public class User {
     private String college;
     private String location;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    private String avatarUrl; // e.g., "/avatars/avatar1.png"
+
+    @ElementCollection(fetch = FetchType.EAGER) // create the corresponding tables of the user, and reference via the username
     private Set<String> skills = new HashSet<>();
 
     @ElementCollection(fetch = FetchType.EAGER)
@@ -47,5 +45,4 @@ public class User {
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> completedDsaQuestion = new HashSet<>();
-
 }

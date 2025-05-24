@@ -40,17 +40,13 @@ public class UserController {
         }
 
         String targetUsername = (usernameParam != null && !usernameParam.isBlank()) ? usernameParam : loggedInUsername;
-        Optional<User> userOpt = userService.getByUsername(targetUsername);
 
-        if (userOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("error", "User not found"));
-        }
+        User user = userService.assignAvatarIfAbsent(targetUsername);
 
-        User user = userOpt.get();
         user.setPassword(null); // never expose password
         return ResponseEntity.ok(user);
     }
+
 
     @PutMapping("/update")
     public ResponseEntity<?> updateProfile(@RequestBody UpdateProfileRequest updateProfileRequest) {
@@ -67,7 +63,7 @@ public class UserController {
 
         Optional<User> updated = userService.updateProfile(
                 username,
-                updateProfileRequest.getUserName(),  // newName
+                updateProfileRequest.getUserName(),  
                 updateProfileRequest.getEmail(),
                 updateProfileRequest.getLocation(),
                 updateProfileRequest.getCollege(),
@@ -86,6 +82,11 @@ public class UserController {
         }
     }
 
+    @GetMapping("/avatar")
+    public ResponseEntity<Map<String, String>> getAvatar(@RequestParam String username) {
+        String avatarUrl = userService.getAvatarUrl(username);
+        return ResponseEntity.ok(Map.of("avatarUrl", avatarUrl));
+    }
 
 
 }
