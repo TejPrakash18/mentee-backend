@@ -1,6 +1,7 @@
 package com.tej.smart_lms.services;
 
 
+import com.tej.smart_lms.dto.ForgotPasswordRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,15 @@ public class AuthService {
     public boolean login(String username, String rawPassword) {
         Optional<User> userOpt = userRepository.findByUsername(username);
         return userOpt.isPresent() && passwordEncoder.matches(rawPassword, userOpt.get().getPassword());
+    }
+
+    public String updateForgottenPassword(ForgotPasswordRequest request) {
+        return userRepository.findByEmail(request.getEmail())
+                .map(user -> {
+                    user.setPassword(passwordEncoder.encode(request.getNewPassword()));
+                    userRepository.save(user);
+                    return "Password updated successfully.";
+                })
+                .orElse("Email not found.");
     }
 }

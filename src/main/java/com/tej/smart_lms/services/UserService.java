@@ -27,7 +27,7 @@ public class UserService {
     }
 
     public Optional<User> updateProfile(String username, String newName, String email,
-                                        String location, String college, String newPassword, Set<String> skills) {
+                                        String location, String college, Set<String> skills) {
         Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
@@ -37,7 +37,6 @@ public class UserService {
             if (newName != null) user.setName(newName);
             if (college != null) user.setCollege(college);
             if (email != null) user.setEmail(email);
-            if (newPassword != null) user.setPassword(passwordEncoder.encode(newPassword));
 
             return Optional.of(userRepository.save(user));
         }

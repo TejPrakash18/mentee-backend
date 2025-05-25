@@ -67,7 +67,6 @@ public class UserController {
                 updateProfileRequest.getEmail(),
                 updateProfileRequest.getLocation(),
                 updateProfileRequest.getCollege(),
-                updateProfileRequest.getPassword(),
                 updateProfileRequest.getSkills()
         );
 

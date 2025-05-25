@@ -1,6 +1,7 @@
 package com.tej.smart_lms.controller;
 
 
+import com.tej.smart_lms.dto.ForgotPasswordRequest;
 import com.tej.smart_lms.dto.LoginRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.services.AuthService;
@@ -40,7 +41,15 @@ public class AuthController {
             return ResponseEntity.status(401).body("Invalid credentials");
         }
     }
-
+    @PostMapping("/forgot-password")
+    public ResponseEntity<String> forgotPassword(@RequestBody ForgotPasswordRequest request) {
+        String message = authService.updateForgottenPassword(request);
+        if (message.equals("Password updated successfully.")) {
+            return ResponseEntity.ok(message);
+        } else {
+            return ResponseEntity.badRequest().body(message);
+        }
+    }
 
 
 

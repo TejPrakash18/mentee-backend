@@ -13,7 +13,6 @@ public class UpdateProfileRequest {
     private String userName;
     private String email;
     private String college;
-    private String password;
     private String location;
     private Set<String> skills;
 
