@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 @Entity
 @Getter
@@ -33,12 +34,13 @@ public class User {
     private String password;
 
     private String college;
+    private String education;
     private String location;
 
     private String avatarUrl; // e.g., "/avatars/avatar1.png"
 
     @ElementCollection(fetch = FetchType.EAGER) // create the corresponding tables of the user, and reference via the username
-    private Set<String> skills = new HashSet<>();
+    private Set<String> skills = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> completedProjects = new HashSet<>();

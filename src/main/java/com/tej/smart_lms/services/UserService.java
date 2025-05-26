@@ -11,10 +11,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class UserService {
@@ -27,15 +25,25 @@ public class UserService {
     }
 
     public Optional<User> updateProfile(String username, String newName, String email,
-                                        String location, String college, Set<String> skills) {
+                                        String location, String college, String education, Set<String> skills) {
         Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
 
             if (location != null) user.setLocation(location);
-            if (skills != null) user.setSkills(skills); // Avoid duplicate merge
+            if (skills != null) {
+                Set<String> normalizedSkills = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+                for (String skill : skills) {
+                    if (skill != null) {
+                        normalizedSkills.add(skill.trim());
+                    }
+                }
+                user.setSkills(normalizedSkills);
+            }
+
             if (newName != null) user.setName(newName);
             if (college != null) user.setCollege(college);
+            if(college!= null) user.setEducation(education);
             if (email != null) user.setEmail(email);
 
             return Optional.of(userRepository.save(user));
