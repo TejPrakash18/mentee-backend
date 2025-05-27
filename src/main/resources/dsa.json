@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Display odd numbers between 1 and 100",
+    "title": "Display odd numbers between 1 and 30",
     "difficulty": "Basic",
     "category": "Fandamental",
-    "explanation": "Prints all the odd numbers from 1 to 100 using a loop.",
+    "explanation": "Prints all the odd numbers from 1 to 30 using a loop.",
     "examples": [
       {
-        "input": "",
-        "output": "1 3 5 ... 99"
+        "input": "1 ... 30",
+        "output": "1 3 5 7 9 11 13 15 17 19 21 23 25 27 29"
       }
     ],
-    "expected_output": "List of odd numbers from 1 to 100"
+    "expected_output": "1 3 5 7 9 11 13 15 17 19 21 23 25 27 29"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "explanation": "Calculates the sum of all odd numbers between 1 and 100.",
     "examples": [
       {
-        "input": "",
+        "input": "1...100",
         "output": "2500"
       }
     ],
@@ -35,7 +35,7 @@
     "explanation": "Counts how many odd numbers are in the range 1 to 100.",
     "examples": [
       {
-        "input": "",
+        "input": "1...100",
         "output": "50"
       }
     ],
@@ -51,13 +51,9 @@
       {
         "input": "5",
         "output": "15"
-      },
-      {
-        "input": "10",
-        "output": "55"
       }
     ],
-    "expected_output": "Sum of first n natural numbers"
+    "expected_output": "15"
   },
   {
     "id": 5,
@@ -66,16 +62,13 @@
     "category": "Fandamental",
     "explanation": "Counts how many digits a number has.",
     "examples": [
-      {
-        "input": "12345",
-        "output": "5"
-      },
+
       {
         "input": "789",
         "output": "3"
       }
     ],
-    "expected_output": "Total number of digits"
+    "expected_output": "3"
   },
   {
     "id": 6,
@@ -87,13 +80,9 @@
       {
         "input": "1234",
         "output": "4321"
-      },
-      {
-        "input": "987",
-        "output": "789"
       }
     ],
-    "expected_output": "Reversed number"
+    "expected_output": "4321"
   },
   {
     "id": 7,
@@ -105,13 +94,9 @@
       {
         "input": "153",
         "output": "Armstrong Number"
-      },
-      {
-        "input": "123",
-        "output": "Not an Armstrong Number"
       }
     ],
-    "expected_output": "Check Armstrong or not"
+    "expected_output": "Armstrong Number"
   },
   {
     "id": 8,
@@ -125,7 +110,7 @@
         "output": "One Two Three"
       }
     ],
-    "expected_output": "Digits in word form"
+    "expected_output": "One Two Three"
   },
   {
     "id": 9,
@@ -137,13 +122,9 @@
       {
         "input": "121",
         "output": "Palindrome"
-      },
-      {
-        "input": "123",
-        "output": "Not Palindrome"
       }
     ],
-    "expected_output": "Palindrome status"
+    "expected_output": "Palindrome"
   },
   {
     "id": 10,
@@ -157,7 +138,7 @@
         "output": "2 3 5 7 11, Sum = 28, Avg = 5.6"
       }
     ],
-    "expected_output": "List, sum and average of N primes"
+    "expected_output": "2 3 5 7 11, Sum = 28, Avg = 5.6"
   },
   {
     "id": 11,
@@ -169,13 +150,9 @@
       {
         "input": "6",
         "output": "Perfect Number"
-      },
-      {
-        "input": "10",
-        "output": "Not a Perfect Number"
       }
     ],
-    "expected_output": "Perfect or not"
+    "expected_output": "Perfect Number"
   },
   {
     "id": 12,
@@ -185,15 +162,11 @@
     "explanation": "Calculates the factorial of a given number.",
     "examples": [
       {
-        "input": "5",
-        "output": "120"
-      },
-      {
         "input": "3",
         "output": "6"
       }
     ],
-    "expected_output": "Factorial value"
+    "expected_output": "6"
   },
   {
     "id": 13,
@@ -205,13 +178,9 @@
       {
         "input": "10",
         "output": "0 1 1 2 3 5 8"
-      },
-      {
-        "input": "15",
-        "output": "0 1 1 2 3 5 8 13"
       }
     ],
-    "expected_output": "Fibonacci sequence"
+    "expected_output": "0 1 1 2 3 5 8"
   },
   {
     "id": 14,
@@ -223,13 +192,9 @@
       {
         "input": "2020",
         "output": "Leap Year"
-      },
-      {
-        "input": "2019",
-        "output": "Not a Leap Year"
       }
     ],
-    "expected_output": "Leap year status"
+    "expected_output": "Leap Year"
   },
   {
     "id": 15,
@@ -239,15 +204,11 @@
     "explanation": "Determines if a number is even or odd using modulus operator.",
     "examples": [
       {
-        "input": "4",
-        "output": "Even"
-      },
-      {
         "input": "7",
         "output": "Odd"
       }
     ],
-    "expected_output": "Even or Odd"
+    "expected_output": "Odd"
   },
   {
     "id": 16,
@@ -261,7 +222,7 @@
         "output": "a = 10, b = 5"
       }
     ],
-    "expected_output": "Swapped values"
+    "expected_output": "a = 10, b = 5"
   },
   {
     "id": 17,
@@ -275,7 +236,7 @@
         "output": "LCM = 12, HCF = 2"
       }
     ],
-    "expected_output": "LCM and HCF"
+    "expected_output": "LCM = 12, HCF = 2"
   },
   {
     "id": 18,
@@ -287,13 +248,9 @@
       {
         "input": "7",
         "output": "Prime Number"
-      },
-      {
-        "input": "9",
-        "output": "Not Prime"
       }
     ],
-    "expected_output": "Prime status"
+    "expected_output": "Prime Number"
   },
   {
     "id": 19,
@@ -307,7 +264,7 @@
         "output": "3 6 9 12 15 18 21 24 27 30"
       }
     ],
-    "expected_output": "Multiplication table"
+    "expected_output": "3 6 9 12 15 18 21 24 27 30"
   },
   {
     "id": 20,
@@ -321,7 +278,7 @@
         "output": "Vowels: 2, Consonants: 3"
       }
     ],
-    "expected_output": "Vowel and consonant count"
+    "expected_output": "Vowels: 2, Consonants: 3"
   },
   {
     "id": 21,
@@ -331,15 +288,11 @@
     "explanation": "Converts temperature from Celsius to Fahrenheit.",
     "examples": [
       {
-        "input": "0",
-        "output": "32"
-      },
-      {
         "input": "100",
         "output": "212"
       }
     ],
-    "expected_output": "Temperature in Fahrenheit"
+    "expected_output": "212"
   },
   {
     "id": 22,
@@ -348,16 +301,13 @@
     "category": "Fandamental",
     "explanation": "Converts a decimal number to its binary equivalent.",
     "examples": [
-      {
-        "input": "10",
-        "output": "1010"
-      },
+
       {
         "input": "5",
         "output": "101"
       }
     ],
-    "expected_output": "Binary number"
+    "expected_output": "101"
   },
   {
     "id": 23,
@@ -369,13 +319,9 @@
       {
         "input": "2^3",
         "output": "8"
-      },
-      {
-        "input": "5^2",
-        "output": "25"
       }
     ],
-    "expected_output": "Result of power"
+    "expected_output": "8"
   },
   {
     "id": 24,
@@ -389,7 +335,7 @@
         "output": "7"
       }
     ],
-    "expected_output": "Maximum number"
+    "expected_output": "7"
   },
   {
     "id": 25,
@@ -401,13 +347,9 @@
       {
         "input": "a",
         "output": "Vowel"
-      },
-      {
-        "input": "z",
-        "output": "Consonant"
       }
     ],
-    "expected_output": "Vowel or Consonant"
+    "expected_output": "Vowel"
   },
   {
     "id": 26,
@@ -421,7 +363,7 @@
         "output": "153.938"
       }
     ],
-    "expected_output": "Area of circle"
+    "expected_output": "153.938"
   },
   {
     "id": 27,
@@ -431,15 +373,11 @@
     "explanation": "Prints ASCII values for characters A-Z and a-z.",
     "examples": [
       {
-        "input": "A",
-        "output": "65"
-      },
-      {
         "input": "a",
         "output": "97"
       }
     ],
-    "expected_output": "ASCII value"
+    "expected_output": "99"
   },
   {
     "id": 28,
@@ -453,7 +391,7 @@
         "output": "10"
       }
     ],
-    "expected_output": "Sum of digits"
+    "expected_output": "10"
   },
   {
     "id": 29,
@@ -465,13 +403,9 @@
       {
         "input": "A",
         "output": "Alphabet"
-      },
-      {
-        "input": "1",
-        "output": "Not Alphabet"
       }
     ],
-    "expected_output": "Alphabet check"
+    "expected_output": "Alphabet"
   },
   {
     "id": 30,
@@ -483,13 +417,9 @@
       {
         "input": "3",
         "output": "27"
-      },
-      {
-        "input": "5",
-        "output": "125"
       }
     ],
-    "expected_output": "Cube value"
+    "expected_output": "27"
   },
   {
     "id": 31,
@@ -501,13 +431,9 @@
       {
         "input": "60, 60, 60",
         "output": "Valid Triangle"
-      },
-      {
-        "input": "90, 45, 45",
-        "output": "Valid Triangle"
       }
     ],
-    "expected_output": "Triangle validity"
+    "expected_output": "Valid Triangle"
   },
   {
     "id": 32,
@@ -517,15 +443,11 @@
     "explanation": "Determines if a character is uppercase or lowercase.",
     "examples": [
       {
-        "input": "A",
-        "output": "Uppercase"
-      },
-      {
         "input": "z",
         "output": "Lowercase"
       }
     ],
-    "expected_output": "Case of character"
+    "expected_output": "Lowercase"
   },
   {
     "id": 33,
@@ -539,7 +461,7 @@
         "output": "6"
       }
     ],
-    "expected_output": "Area of triangle"
+    "expected_output": "6"
   },
   {
     "id": 34,
@@ -553,7 +475,7 @@
         "output": "100"
       }
     ],
-    "expected_output": "Simple Interest"
+    "expected_output": "100"
   },
   {
     "id": 35,
@@ -565,13 +487,9 @@
       {
         "input": "10, 2",
         "output": "Divisible"
-      },
-      {
-        "input": "10, 3",
-        "output": "Not Divisible"
       }
     ],
-    "expected_output": "Divisibility result"
+    "expected_output": "Divisible"
   },
   {
     "id": 36,
@@ -585,7 +503,7 @@
         "output": "16"
       }
     ],
-    "expected_output": "Perimeter value"
+    "expected_output": "16"
   },
   {
     "id": 37,
@@ -599,7 +517,7 @@
         "output": "3"
       }
     ],
-    "expected_output": "Average value"
+    "expected_output": "3"
   },
   {
     "id": 38,
@@ -611,13 +529,9 @@
       {
         "input": "madam",
         "output": "Palindrome"
-      },
-      {
-        "input": "hello",
-        "output": "Not Palindrome"
       }
     ],
-    "expected_output": "String palindrome status"
+    "expected_output": "Palindrome"
   },
   {
     "id": 39,
@@ -629,13 +543,9 @@
       {
         "input": "8",
         "output": "True"
-      },
-      {
-        "input": "10",
-        "output": "False"
       }
     ],
-    "expected_output": "True/False"
+    "expected_output": "True"
   },
   {
     "id": 40,

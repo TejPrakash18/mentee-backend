@@ -44,6 +44,4 @@ public class ProjectController {
         int count = projectService.getCompletedProjectsCount(username);
         return ResponseEntity.ok(count);
     }
-
-
 }

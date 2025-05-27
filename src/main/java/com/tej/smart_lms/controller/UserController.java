@@ -1,5 +1,6 @@
 package com.tej.smart_lms.controller;
 
+import com.tej.smart_lms.dto.Project;
 import com.tej.smart_lms.dto.UpdateProfileRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.services.UserService;
@@ -22,6 +23,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
 
     @GetMapping("/profile")
     public ResponseEntity<?> getProfile(@RequestParam(name = "username", required = false) String usernameParam) {
