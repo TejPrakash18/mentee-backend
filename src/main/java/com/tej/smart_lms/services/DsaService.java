@@ -72,4 +72,17 @@ public class DsaService {
                 ));
     }
 
+    public List<String> getCompletedDsaQuestions(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        if (user != null) {
+            Set<String> completed = user.getCompletedDsaQuestion();
+            if (completed != null) {
+                return new ArrayList<>(completed);
+            }
+        }
+        return Collections.emptyList();
+    }
+
+
+
 }

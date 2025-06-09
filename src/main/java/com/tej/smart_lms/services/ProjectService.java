@@ -46,4 +46,14 @@ public class ProjectService {
         return user.getCompletedProjects() != null ? user.getCompletedProjects().size() : 0;
     }
 
+    public List<String> getCompletedProjects(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        if (user != null) {
+            Set<String> completed = user.getCompletedProjects();
+            if (completed != null) {
+                return new ArrayList<>(completed);
+            }
+        }
+        return Collections.emptyList();
+    }
 }

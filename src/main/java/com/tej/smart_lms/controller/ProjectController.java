@@ -44,4 +44,9 @@ public class ProjectController {
         int count = projectService.getCompletedProjectsCount(username);
         return ResponseEntity.ok(count);
     }
+    @GetMapping("/completed")
+    public ResponseEntity<List<String>> getCompletedProjects(@RequestParam String username) {
+        List<String> completedQuestions = projectService.getCompletedProjects(username);
+        return ResponseEntity.ok(completedQuestions);
+    }
 }

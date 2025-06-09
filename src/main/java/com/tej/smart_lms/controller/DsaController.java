@@ -58,5 +58,11 @@ public class DsaController {
         return ResponseEntity.ok(result);
     }
 
+    @GetMapping("/completed")
+    public ResponseEntity<List<String>> getCompletedDsaQuestions(@RequestParam String username) {
+        List<String> completedQuestions = dsaService.getCompletedDsaQuestions(username);
+        return ResponseEntity.ok(completedQuestions);
+    }
+
 
 }
