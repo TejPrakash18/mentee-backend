@@ -1,9 +1,8 @@
 package com.tej.smart_lms.controller;
-
-import com.tej.smart_lms.dto.Project;
 import com.tej.smart_lms.dto.UpdateProfileRequest;
 import com.tej.smart_lms.model.User;
 import com.tej.smart_lms.services.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +18,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/user")
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@Tag(name = "User API", description = "Operations for users")
 public class UserController {
 
     @Autowired
     private UserService userService;
+
 
 
     @GetMapping("/profile")

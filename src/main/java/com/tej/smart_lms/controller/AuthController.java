@@ -19,6 +19,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+
 public class AuthController {
 
     @Autowired
@@ -27,11 +28,15 @@ public class AuthController {
     @Autowired private JwtUtil jwtUtil;
 
     @PostMapping("/register")
+
+
     public ResponseEntity<User> registerUser(@RequestBody User user) {
         return ResponseEntity.ok(authService.register(user));
     }
 
     @PostMapping("/login")
+
+
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         boolean success = authService.login(request.getUsername(), request.getPassword());
         if (success) {
@@ -42,6 +47,7 @@ public class AuthController {
         }
     }
     @PostMapping("/forgot-password")
+
     public ResponseEntity<String> forgotPassword(@RequestBody ForgotPasswordRequest request) {
         String message = authService.updateForgottenPassword(request);
         if (message.equals("Password updated successfully.")) {
@@ -54,6 +60,7 @@ public class AuthController {
 
 
     @PostMapping("/logout")
+
     public ResponseEntity<String> logout(HttpSession session) {
         session.invalidate();
         return ResponseEntity.ok("Logged out");

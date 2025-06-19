@@ -24,7 +24,9 @@ public class SecurityConfig {
                 .formLogin().disable()
                 .logout().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/auth/**", "/swagger-ui/**",
+                        "/v3/api-docs/**",
+                        "/swagger-ui.html").permitAll()
                 .anyRequest().permitAll()
                 .and()
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
