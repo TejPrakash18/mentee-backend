@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // adjust to your API pattern
-                        .allowedOrigins("http://localhost:5173") // no wildcard here
+                        .allowedOrigins("http://localhost:3000") // no wildcard here
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
