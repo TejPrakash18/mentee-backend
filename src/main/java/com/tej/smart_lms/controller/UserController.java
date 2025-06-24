@@ -17,7 +17,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 @Tag(name = "User API", description = "Operations for users")
 public class UserController {
 

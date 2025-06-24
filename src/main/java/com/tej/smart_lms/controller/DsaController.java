@@ -13,8 +13,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/dsa")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
-
 public class DsaController {
 
     @Autowired private DsaService dsaService;
