@@ -26,10 +26,13 @@ public class AuthController {
     @Autowired private JwtUtil jwtUtil;
 
     @PostMapping("/register")
-
-
-    public ResponseEntity<User> registerUser(@RequestBody User user) {
-        return ResponseEntity.ok(authService.register(user));
+    public ResponseEntity<?> registerUser(@RequestBody User user) {
+        try {
+            User saved = authService.register(user);
+            return ResponseEntity.ok(saved);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PostMapping("/login")
