@@ -43,7 +43,7 @@ public class User {
     private Set<String> skills = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
 
     @ElementCollection(fetch = FetchType.EAGER)
-    private Set<String> completedProjects = new HashSet<>();
+    private Set<String> completedBlogs;
 
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<String> completedDsaQuestion = new HashSet<>();

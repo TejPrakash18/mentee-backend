@@ -1,0 +1,143 @@
+[
+  {
+    "id": 2,
+    "title": "REST vs GraphQL: What Developers Should Know",
+    "category": "Technical",
+    "difficulty": "Medium",
+    "tags": ["api", "graphql", "rest", "web"],
+    "sections": [
+      {
+        "title": "What is REST?",
+        "type": "text",
+        "content": "REST (Representational State Transfer) is a widely used architectural style for building APIs using HTTP."
+      },
+      {
+        "title": "What is GraphQL?",
+        "type": "text",
+        "content": "GraphQL is a query language for APIs and a runtime for fulfilling queries with existing data."
+      },
+      {
+        "title": "GraphQL Example",
+        "type": "code",
+        "language": "graphql",
+        "content": "{\n  user(id: \"1\") {\n    name\n    email\n  }\n}"
+      },
+      {
+        "title": "REST vs GraphQL Comparison",
+        "type": "text",
+        "content": "GraphQL is more flexible in data fetching, but REST is simpler and widely adopted. Choose based on your project needs."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Build a TODO App with React and Local Storage",
+    "category": "Projects Blog",
+    "difficulty": "Easy",
+    "tags": ["react", "javascript", "frontend", "project"],
+    "sections": [
+      {
+        "title": "Overview",
+        "type": "text",
+        "content": "This project is a basic TODO application that lets users add, delete, and complete tasks."
+      },
+      {
+        "title": "Project Structure",
+        "type": "code",
+        "language": "javascript",
+        "content": "src/\n├── components/\n│   └── TodoItem.jsx\n├── App.jsx\n└── index.js"
+      },
+      {
+        "title": "Add Task Feature",
+        "type": "code",
+        "language": "javascript",
+        "content": "const addTask = () => {\n  setTasks([...tasks, { text: newTask, done: false }]);\n};"
+      },
+      {
+        "title": "Local Storage Integration",
+        "type": "text",
+        "content": "Use `localStorage.setItem` and `localStorage.getItem` to persist tasks between sessions."
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Understanding HTTP: The Backbone of the Web",
+    "category": "Core Fundamental",
+    "difficulty": "Basic",
+    "tags": ["http", "web", "protocol", "request", "response"],
+    "sections": [
+      {
+        "title": "What is HTTP?",
+        "type": "text",
+        "content": "HTTP (HyperText Transfer Protocol) is the foundation of any data exchange on the Web. It is a protocol used for transmitting hypertext over the internet and is based on a client-server model where a client sends a request and the server responds."
+      },
+      {
+        "title": "HTTP Request Structure",
+        "type": "text",
+        "content": "An HTTP request typically consists of:\n- Request Line: Contains method (GET, POST, etc.), URL, and HTTP version.\n- Headers: Key-value pairs that provide metadata (like Content-Type, User-Agent).\n- Body: Optional data sent with POST or PUT requests (like form data or JSON)."
+      },
+      {
+        "title": "HTTP Response Structure",
+        "type": "text",
+        "content": "An HTTP response includes:\n- Status Line: HTTP version, status code, and reason phrase (e.g., 200 OK).\n- Headers: Additional information (e.g., Content-Length, Set-Cookie).\n- Body: Optional content returned (HTML, JSON, images, etc.)."
+      },
+      {
+        "title": "Common HTTP Methods",
+        "type": "text",
+        "content": "Some widely used HTTP methods include:\n- GET: Retrieve data\n- POST: Submit new data\n- PUT: Update existing data\n- DELETE: Remove data\n- PATCH: Partial update of data"
+      },
+      {
+        "title": "Example: HTTP GET with cURL",
+        "type": "code",
+        "language": "bash",
+        "content": "curl -X GET https://api.example.com/data"
+      },
+      {
+        "title": "Real-world Use Case",
+        "type": "text",
+        "content": "Whenever you open a website, your browser sends an HTTP GET request to a server. For example, navigating to https://example.com sends a GET request, and the server returns an HTML page which the browser renders. APIs used in frontend apps also rely on HTTP to communicate with the backend."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Understanding Recursion in Programming",
+    "category": "Core Fundamental",
+    "difficulty": "Basic",
+    "tags": ["recursion", "algorithms", "functions"],
+    "sections": [
+      {
+        "title": "Introduction to Recursion",
+        "type": "text",
+        "content": "Recursion is a core concept in programming where a method calls itself to solve smaller sub-problems of a larger problem. It is elegant and useful for problems involving nested or hierarchical data. In Java, recursive methods must be designed with:\n\n- A base case to terminate recursion.\n- A recursive case that simplifies the problem and calls itself."
+      },
+      {
+        "title": "Visual Example",
+        "type": "code",
+        "language": "java",
+        "content": "public int factorial(int n) {\n    if (n == 0) return 1;\n    return n * factorial(n - 1);\n}\n\n// factorial(5)\n// = 5 * 4 * 3 * 2 * 1 = 120"
+      },
+      {
+        "title": "Tail Recursion",
+        "type": "text",
+        "content": "Tail recursion is a special form of recursion where the recursive call is the last operation in the function. This allows some languages to optimize the call (Tail Call Optimization or TCO). Java does not support TCO, so tail-recursive functions do not improve performance in Java."
+      },
+      {
+        "title": "Recursion vs Iteration",
+        "type": "text",
+        "content": "Recursion vs Iteration in Java:\n\n| Aspect | Recursion | Iteration |\n|--------|-----------|-----------|\n| Structure | Function calls itself | Loops (for, while) |\n| Memory | Uses call stack | Uses fixed memory |\n| Performance | May cause stack overflow | More memory efficient |\n| Readability | More elegant for some problems | Often faster in Java |"
+      },
+      {
+        "title": "Memoization in Recursion",
+        "type": "text",
+        "content": "Memoization stores results of expensive function calls to avoid repeating them. In Java, it can be done using a Map:\n\n```java\nMap<Integer, Integer> memo = new HashMap<>();\npublic int fib(int n) {\n    if (n <= 1) return n;\n    if (memo.containsKey(n)) return memo.get(n);\n    int result = fib(n - 1) + fib(n - 2);\n    memo.put(n, result);\n    return result;\n}\n```"
+      },
+      {
+        "title": "Real-world Use Case",
+        "type": "text",
+        "content": "Recursion is used in many real-world cases:\n- Tree Traversals (pre/in/post order)\n- Backtracking (N-Queens, Sudoku)\n- Divide-and-Conquer (Merge Sort, Binary Search)\n- DFS in Graphs\n- Parsing nested data structures"
+      }
+    ]
+  }
+]

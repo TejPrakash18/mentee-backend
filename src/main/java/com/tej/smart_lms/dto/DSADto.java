@@ -1,28 +1,24 @@
 package com.tej.smart_lms.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DSA {
+public class DSADto {
     private Long id;
     private String title;
     private String difficulty;
     private String category;
     private String explanation;
-    private List<ExampleDto> examples;
 
     @JsonProperty("expected_output")
     private String expectedOutput;
 
+    private List<ExampleDto> examples;
 
+    private Long version; // ✅ add this
 }

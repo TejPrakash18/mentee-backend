@@ -1,88 +1,135 @@
 package com.tej.smart_lms.services;
 
-
-import com.tej.smart_lms.dto.DSA;
-import com.tej.smart_lms.dto.Project;
+import com.tej.smart_lms.dto.DSADto;
+import com.tej.smart_lms.dto.DsaMapper;
 import com.tej.smart_lms.exceptions.DSANotFoundException;
+import com.tej.smart_lms.model.DSA;
+import com.tej.smart_lms.model.DsaExample;
 import com.tej.smart_lms.model.User;
+import com.tej.smart_lms.repository.DsaQuestionRepository;
 import com.tej.smart_lms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
+
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
-
 @Service
 public class DsaService {
 
-    @Autowired
-    private UserRepository userRepository;
+    @Autowired private DsaQuestionRepository dsaRepo;
+    @Autowired private UserRepository userRepository;
 
-    @Autowired private DataLoaderService dataLoaderService;
-
-    public List<DSA> getAllDsaQuestion() {
-        return dataLoaderService.getDsaList();
+    // ✅ Get all DSA questions
+    public List<DSADto> getAllDsaQuestion() {
+        return dsaRepo.findAll().stream()
+                .map(DsaMapper::toDto)
+                .toList();
+    }
+    public DSADto createDsa(DSADto dto) {
+        DSA saved = dsaRepo.save(DsaMapper.toEntity(dto));
+        return DsaMapper.toDto(saved);
     }
 
-    public DSA getById(String id) {
-        Long parsedId;
-        parsedId = Long.parseLong(id);
-        return dataLoaderService.getDsaList().stream()
-                .filter(p -> p.getId() != null && p.getId().equals(parsedId))
-                .findFirst()
-                .orElseThrow(() -> new DSANotFoundException("DSA not found with id: " + parsedId));
+    public DSADto updateDsa(Long id, DSADto dto) {
+        DSA existing = dsaRepo.findById(id)
+                .orElseThrow(() -> new DSANotFoundException("DSA not found with ID: " + id));
+
+        // modifying the managed entity directly
+        existing.setTitle(dto.getTitle());
+        existing.setDifficulty(dto.getDifficulty());
+        existing.setCategory(dto.getCategory());
+        existing.setExplanation(dto.getExplanation());
+        existing.setExpectedOutput(dto.getExpectedOutput());
+
+        existing.getExamples().clear();
+        existing.getExamples().addAll(
+                dto.getExamples().stream()
+                        .map(e -> new DsaExample(null, e.getInput(), e.getOutput()))
+                        .collect(Collectors.toList())
+        );
+
+        // this will trigger the version check
+        DSA updated = dsaRepo.save(existing);
+        return DsaMapper.toDto(updated);
     }
 
-    public List<DSA> getByCategory(String category) {
-        return dataLoaderService.getDsaList().stream()
-                .filter(dsa -> dsa.getCategory() != null && dsa.getCategory().equalsIgnoreCase(category))
-                .collect(Collectors.toList());
+
+    // ✅ Get by ID
+    public DSADto getById(String id) {
+        DSA question = dsaRepo.findById(Long.parseLong(id))
+                .orElseThrow(() -> new DSANotFoundException("DSA not found with ID: " + id));
+        return DsaMapper.toDto(question);
     }
 
+    // ✅ Get by category (return DTOs)
+    public List<DSADto> getByCategory(String category) {
+        return dsaRepo.findByCategoryIgnoreCase(category).stream()
+                .map(DsaMapper::toDto)
+                .toList();
+    }
+
+    // ✅ Mark a DSA question completed by user
     public void markDsaCompleted(String username, String title) {
-        User user = userRepository.findByUsername(username).orElseThrow();
-        Set<String> completed = user.getCompletedDsaQuestion();
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+        Set<String> completed = Optional.ofNullable(user.getCompletedDsaQuestion())
+                .orElse(new HashSet<>());
         completed.add(title);
         user.setCompletedDsaQuestion(completed);
         userRepository.save(user);
     }
 
+    // ✅ Get completed count
     public int getCompletedDsaCount(String username) {
-        User user = userRepository.findByUsername(username).orElseThrow();
-        Set<String> completed = user.getCompletedDsaQuestion();
-        return completed != null ? completed.size() : 0;
+        return Optional.ofNullable(
+                userRepository.findByUsername(username)
+                        .orElseThrow(() -> new UsernameNotFoundException("User not found"))
+                        .getCompletedDsaQuestion()
+        ).map(Set::size).orElse(0);
     }
+
+    // ✅ Get list of completed titles
+    public List<String> getCompletedDsaQuestions(String username) {
+        return new ArrayList<>(
+                Optional.ofNullable(
+                        userRepository.findByUsername(username)
+                                .orElseThrow(() -> new UsernameNotFoundException("User not found"))
+                                .getCompletedDsaQuestion()
+                ).orElse(Collections.emptySet())
+        );
+    }
+
+    // ✅ Count completed by difficulty
     public Map<String, Long> countCompletedDsaByDifficulty(String username) {
         User user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found: " + username));
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
         Set<String> completedTitles = user.getCompletedDsaQuestion();
-        if (completedTitles == null || completedTitles.isEmpty()) {
-            return Collections.emptyMap();
-        }
+        if (completedTitles == null || completedTitles.isEmpty()) return Collections.emptyMap();
 
-        return dataLoaderService.getDsaList().stream()
-                .filter(dsa -> completedTitles.contains(dsa.getTitle()))
-                .filter(dsa -> dsa.getDifficulty() != null && !dsa.getDifficulty().isEmpty())
+        return dsaRepo.findAll().stream()
+                .filter(q -> completedTitles.contains(q.getTitle()))
                 .collect(Collectors.groupingBy(
-                        dsa -> dsa.getDifficulty().toLowerCase(),
+                        q -> q.getDifficulty().toLowerCase(),
                         Collectors.counting()
                 ));
     }
 
-    public List<String> getCompletedDsaQuestions(String username) {
-        User user = userRepository.findByUsername(username).orElse(null);
-        if (user != null) {
-            Set<String> completed = user.getCompletedDsaQuestion();
-            if (completed != null) {
-                return new ArrayList<>(completed);
-            }
-        }
-        return Collections.emptyList();
+    // ✅ Get total question count
+    public long getTotalQuestionCount() {
+        return dsaRepo.count();
     }
 
-
-
+    // ✅ Get count grouped by difficulty
+    public Map<String, Long> getDifficultyWiseCount() {
+        return dsaRepo.findAll().stream()
+                .collect(Collectors.groupingBy(
+                        q -> q.getDifficulty().toLowerCase(),
+                        Collectors.counting()
+                ));
+    }
 }
