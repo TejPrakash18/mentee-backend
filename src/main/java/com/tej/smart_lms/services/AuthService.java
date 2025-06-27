@@ -32,10 +32,18 @@ public class AuthService {
         return userRepository.save(user);
     }
 
-    public boolean login(String username, String rawPassword) {
+    public void login(String username, String rawPassword) {
         Optional<User> userOpt = userRepository.findByUsername(username);
-        return userOpt.isPresent() && passwordEncoder.matches(rawPassword, userOpt.get().getPassword());
+
+        if (userOpt.isEmpty()) {
+            throw new IllegalArgumentException("Username not found");
+        }
+
+        if (!passwordEncoder.matches(rawPassword, userOpt.get().getPassword())) {
+            throw new IllegalArgumentException("Incorrect password");
+        }
     }
+
 
     public String updateForgottenPassword(ForgotPasswordRequest request) {
         return userRepository.findByEmail(request.getEmail())

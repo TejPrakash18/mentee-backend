@@ -31,24 +31,28 @@ public class AuthController {
             User saved = authService.register(user);
             return ResponseEntity.ok(saved);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            // Return JSON instead of plain text
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("message", e.getMessage()));  // <- this is key
         }
     }
+
 
     @PostMapping("/login")
-
-
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
-        boolean success = authService.login(request.getUsername(), request.getPassword());
-        if (success) {
+        try {
+            authService.login(request.getUsername(), request.getPassword());
             String token = jwtUtil.generateToken(request.getUsername());
             return ResponseEntity.ok(Collections.singletonMap("token", token));
-        } else {
-            return ResponseEntity.status(401).body("Invalid credentials");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity
+                    .status(401)
+                    .body(Map.of("message", e.getMessage())); // returns { "message": "Incorrect password" }
         }
     }
-    @PostMapping("/forgot-password")
 
+    @PostMapping("/forgot-password")
     public ResponseEntity<String> forgotPassword(@RequestBody ForgotPasswordRequest request) {
         String message = authService.updateForgottenPassword(request);
         if (message.equals("Password updated successfully.")) {
